@@ -1,0 +1,19 @@
+<div class="container">
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1"%>
+    Add Todo
+  </a>
+
+<h1>Dashboard</h1>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <%= form_for :todo do |f| %>
+      <div class="input-field">
+        <%= f.text_field :task, placeholder: "Task name" %>
+      </div>
+      <%= f.submit "Save todo", class: "waves-effect waves-light btn" %>
+    <% end %>
+  </div>
+</div>

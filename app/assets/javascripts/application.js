@@ -19,10 +19,12 @@ $(document).ready(function() {
   $('.modal-trigger').leanModal();
 
   $('form').on('submit', function(e){
+    console.log('HAT');
     e.preventDefault();
     var data = $(this).serialize();
     $.post('/todos', data, function(data){
       console.log(data);
+      $('#modal1').closeModal();
     })
   });
 });

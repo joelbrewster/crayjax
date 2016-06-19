@@ -25,6 +25,16 @@ $(document).ready(function() {
     $.post('/todos', data, function(data){
       console.log(data);
       $('#modal1').closeModal();
-    })
-  });
+      var tr = $('<tr>');
+      var deleteButton = $('<button>');
+
+      $('tbody').append(tr);
+      tr.append(
+        $('<td>').text(data.done),
+        $('<td>').text(data.priority),
+        $('<td>').text(data.task)
+      );
+      $('#todos').append(tr);
+    });
+  })
 });
